@@ -1,12 +1,10 @@
-
+import streamlit as st
+@st.experimental_memo
 def stream_app():
-
     # Use a breakpoint in the code line below to debug your script.
     import streamlit as st
-    import numpy as np
     import pandas as pd
     import plotly.express as px
-    import sklearn
     from sklearn.cluster import DBSCAN
     import plotly.graph_objects as go
     from plotly.subplots import make_subplots
@@ -20,50 +18,16 @@ def stream_app():
 
     df = load_data()
     lat_long = df[['latitude', 'longitude']]
-    lat, longg = df.latitude, df.longitude
-    df2 = df.latitude, df.longitude
     X = lat_long.to_numpy()
     fig = px.scatter(lat_long, x="longitude", y="latitude")
     dbscan_cluster_model = DBSCAN(eps=0.38421052631578945, min_samples=26).fit(X)
     lat_long['cluster'] = dbscan_cluster_model.labels_
     fig1 = px.scatter(lat_long, x="longitude", y="latitude", color=lat_long['cluster'])
 
-    import base64
-
-    LOGO_IMAGE = "home_icon.png"
-
-    st.markdown(
-        """
-        <style>
-        .container {
-            display: flex;
-        }
-        .logo-text {
-            font-weight: 700 !important;
-            font-size: 1.2rem;
-            color: white;
-            padding-left: 10px;
-        }
-        .logo-img {
-            display: block;
-            position: relative;
-            float:right;
-            width: 10%;
-            height: 20%;
-        }
-        </style>
-        """,
-        unsafe_allow_html=True
-    )
-
-
-
     with st.sidebar:
         st.title("California Houses Clustering")
         page = st.radio("Navigation bar" ,["Data Exploration", "Clustering", "Infos"])
 
-
-    # st.sidebar.subheader("Choose Classifier")
     st.markdown(
         f"<hr/>",
         unsafe_allow_html=True)
@@ -167,9 +131,6 @@ def stream_app():
         st.markdown(
             f"<p style='text-align: left; font-size:1rem;'>This a web application that serves as a dashboard for the California houses dataset. It contains two main parts: Data Exploration and Clustering.</p>",
             unsafe_allow_html=True)
-
-
-
 
 # Press the green button in the gutter to run the script.
 if __name__ == "__main__":
