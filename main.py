@@ -1,5 +1,6 @@
 import streamlit as st
-@st.experimental_memo
+
+
 def stream_app():
     # Use a breakpoint in the code line below to debug your script.
     import streamlit as st
@@ -26,7 +27,7 @@ def stream_app():
 
     with st.sidebar:
         st.title("California Houses Clustering")
-        page = st.radio("Navigation bar" ,["Data Exploration", "Clustering", "Infos"])
+        page = st.radio("Navigation bar", ["Data Exploration", "Clustering", "Infos"])
 
     st.markdown(
         f"<hr/>",
@@ -58,7 +59,7 @@ def stream_app():
         st.markdown("**Dataset description**")
         st.dataframe(df.describe(), use_container_width=True)
         fig4 = make_subplots(rows=1, cols=2, horizontal_spacing=0.1, vertical_spacing=0.2,
-                             subplot_titles=('Longitude frequency' ,'Latitude frequency'),
+                             subplot_titles=('Longitude frequency', 'Latitude frequency'),
                              column_widths=[0.3, 0.3], row_heights=[0.1])
         fig5 = make_subplots(rows=1, cols=2, horizontal_spacing=0.1, vertical_spacing=0.2,
                              subplot_titles=('housing_median_age frequency', 'total_rooms frequency'),
@@ -105,12 +106,11 @@ def stream_app():
 
     # ------------------------------------------------- Clustering plot1 -----------------------------------------
     if page == "Clustering":
-
         st.markdown(
             f"<h1 style='text-align: center; text-transform:capitalize; height: 8vh; display: flex; align-items: center; justify-content: center; font-size:1.8rem;'>Before clustering</h1>",
             unsafe_allow_html=True)
         st.plotly_chart(fig, use_container_width=True)
-    # ------------------------------------- After Clustering plot2 ---------------------------------------------
+        # ------------------------------------- After Clustering plot2 ---------------------------------------------
         st.markdown(
             f"<h1 style='text-align: center; text-transform:capitalize; height: 8vh; display: flex; align-items: center; justify-content: center; font-size:1.8rem;'>After clustering</h1>",
             unsafe_allow_html=True)
@@ -119,18 +119,19 @@ def stream_app():
         # ----------------------------------------- Subplot after cluster ----------------------------------------
         labels = ["Cluster1", "Cluster2", "Cluster3", "Outliers"]
         fig10 = go.Figure(data=[go.Pie(labels=labels, values=[
-                                    lat_long[lat_long["cluster"] == 0].count().cluster,
-                                    lat_long[lat_long["cluster"] == 1].count().cluster,
-                                    lat_long[lat_long["cluster"] == 2].count().cluster,
-                                    lat_long[lat_long["cluster"] == -1].count().cluster],
-               textinfo='label+percent',
-               insidetextorientation='radial'
-               )])
+            lat_long[lat_long["cluster"] == 0].count().cluster,
+            lat_long[lat_long["cluster"] == 1].count().cluster,
+            lat_long[lat_long["cluster"] == 2].count().cluster,
+            lat_long[lat_long["cluster"] == -1].count().cluster],
+                                       textinfo='label+percent',
+                                       insidetextorientation='radial'
+                                       )])
         st.plotly_chart(fig10, use_container_width=True)
     if page == "Infos":
         st.markdown(
             f"<p style='text-align: left; font-size:1rem;'>This a web application that serves as a dashboard for the California houses dataset. It contains two main parts: Data Exploration and Clustering.</p>",
             unsafe_allow_html=True)
+
 
 # Press the green button in the gutter to run the script.
 if __name__ == "__main__":
