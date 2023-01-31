@@ -76,33 +76,16 @@ def stream_app():
 
         trace0 = go.Histogram(x=df["longitude"], nbinsx=30, name="longitude", showlegend=True)
         trace1 = go.Histogram(x=df["latitude"], nbinsx=30, name="latitude", showlegend=True)
-        trace2 = go.Histogram(x=df["housing_median_age"], nbinsx=30, name="housing_median_age", showlegend=True)
-        trace3 = go.Histogram(x=df["total_rooms"], nbinsx=30, name="total_rooms", showlegend=True)
-        trace4 = go.Histogram(x=df["total_bedrooms"], nbinsx=30, name="total_bedrooms", showlegend=True)
-        trace5 = go.Histogram(x=df["population"], nbinsx=30, name="population", showlegend=True)
-        trace6 = go.Histogram(x=df["households"], nbinsx=30, name="households", showlegend=True)
-        trace7 = go.Histogram(x=df["median_income"], nbinsx=30, name="median_income", showlegend=True)
-        trace8 = go.Histogram(x=df["median_house_value"], nbinsx=30, name="median_house_value", showlegend=True)
+
 
         fig4.append_trace(trace0, 1, 1)
         fig4.append_trace(trace1, 1, 2)
-        fig5.append_trace(trace2, 1, 1)
-        fig5.append_trace(trace3, 1, 2)
-        fig6.append_trace(trace4, 1, 1)
-        fig6.append_trace(trace5, 1, 2)
-        fig7.append_trace(trace6, 1, 1)
-        fig7.append_trace(trace7, 1, 2)
-        fig8.append_trace(trace8, 1, 1)
         fig4.update_layout(
             title_text='Data Distribution',  # title of plot
             bargap=0,  # gap between bars of adjacent location coordinates
             bargroupgap=0  # gap between bars of the same location coordinates
         )
         st.plotly_chart(fig4, use_container_width=True)
-        st.plotly_chart(fig5, use_container_width=True)
-        st.plotly_chart(fig6, use_container_width=True)
-        st.plotly_chart(fig7, use_container_width=True)
-        st.plotly_chart(fig8, use_container_width=True)
 
     # ------------------------------------------------- Clustering plot1 -----------------------------------------
     if page == "Clustering":
