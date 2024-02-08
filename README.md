@@ -1,14 +1,13 @@
 <p align="center"><img src="https://socialify.git.ci/Alidev11/clustering_web_app/image?issues=1&language=1&name=1&owner=1&pattern=Formal%20Invitation&stargazers=1&theme=Dark" alt="project-image" width="850"></p>
 
 <h2>Project Screenshots:</h2>
-<p float="left">
-<img src="Rapport-img/Sign_in.png" width="220"> <img src="Rapport-img/add-warehouse.png" width="220">  <img src="Rapport-img/add-product.png" width="220">  
+<p float="left"> 
 <img src="Rapport-img/nav_bar.png" width="220">  
-<img src="Rapport-img/shape_data.png" width="220">  
-<img src="Rapport-img/data.png" width="220">  
-<img src="Rapport-img/data_dist.png" width="220">  
-<img src="Rapport-img/bf_clustering.png" width="220">  
-<img src="Rapport-img/after_clust.png" width="220">  
+<img src="Rapport-img/shape_data.png" width="240">  
+<img src="Rapport-img/data.png" width="240">  
+<img src="Rapport-img/data_dist.png" width="240">  
+<img src="Rapport-img/bf_clustering.png" width="240">  
+<img src="Rapport-img/after_clust.png" width="240">  
 </p>
 
 <h2>🧐 Methodology</h2>
