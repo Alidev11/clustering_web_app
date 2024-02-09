@@ -3,11 +3,11 @@
 <h2>Project Screenshots:</h2>
 <p float="left"> 
 <img src="Rapport-img/nav_bar.png" width="220">  
-<img src="Rapport-img/shape_data.png" width="240">  
-<img src="Rapport-img/data.png" width="240">  
-<img src="Rapport-img/data_dist.png" width="240">  
-<img src="Rapport-img/bf_clustering.png" width="240">  
-<img src="Rapport-img/after_clust.png" width="240">  
+<img src="Rapport-img/shape_data.png" width="440">  
+<img src="Rapport-img/data.png" width="440">  
+<img src="Rapport-img/data_dist.png" width="440">  
+<img src="Rapport-img/bf_clustering.png" width="440">  
+<img src="Rapport-img/after_clust.png" width="440">  
 </p>
 
 <h2>🧐 Methodology</h2>
